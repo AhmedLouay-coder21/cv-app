@@ -1,0 +1,36 @@
+# Dependencies
+node_modules
+
+# Build output
+dist
+build
+coverage
+
+# Vite / tooling caches
+.vite
+.cache
+.eslintcache
+*.tsbuildinfo
+
+# Generated files
+*.min.js
+*.min.css
+*.generated.*
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+bun.lockb
+
+# Environment files
+.env*
+
+# Static assets (not code)
+public
+
+# Logs
+*.log
+
+# Misc
+.DS_Store
