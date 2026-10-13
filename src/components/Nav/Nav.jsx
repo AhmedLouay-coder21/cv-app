@@ -1,5 +1,5 @@
 import "./Nav.css"
-import NavButton from "./NavButton"
+import Button from "../Button/Button"
 
 function Nav() {
   return (
@@ -9,10 +9,10 @@ function Nav() {
         <nav>
           <ul className="nav-links">
             <li>
-              <NavButton name={"Save draft"} />
+              <Button name={"Save draft"} />
             </li>
             <li>
-              <NavButton name={"Download PDF"} />
+              <Button name={"Download PDF"} />
             </li>
           </ul>
         </nav>

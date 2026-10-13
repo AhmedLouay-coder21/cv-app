@@ -1,0 +1,13 @@
+.progress {
+  display: flex;
+  gap: 8px;
+}
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background: #d3dbe2;
+}
+.progress-bar.done {
+  background: #0f6e66;
+}
