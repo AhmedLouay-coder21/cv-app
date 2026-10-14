@@ -3,7 +3,13 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+html,
+body {
+  height: 100%;
+}
+#root {
+  height: 100%;
+}
 body {
   font-family: Arial, sans-serif;
 }
@@ -28,7 +34,14 @@ button {
   display: flex;
   justify-content: space-around;
   margin-top: 2%;
+  height: 100%;
 }
+@media (max-width: 600px) {
+  #MainContent {
+    margin: 2%;
+  }
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -46,4 +59,14 @@ input {
 input:focus {
   outline: 2px solid #0f6e66;
   border-color: #0f6e66;
+}
+@media (max-width: 600px) {
+  #MainContent {
+    flex-direction: column;
+    gap: 20px;
+    height: auto;
+  }
+  input {
+    width: 100%;
+  }
 }

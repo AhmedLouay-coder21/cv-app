@@ -2,18 +2,25 @@ import Nav from "./components/Nav/Nav"
 import Form from "./components/Form/Form"
 import Template from "./components/Template/Template"
 import { useState } from "react"
+import "./styles/App.css"
 
 const resumeInfo = {
   personal: {
     fname: "John",
     lname: "Doe",
-    role: "Software Engineer",
+    desiredRole: "Software Engineer",
     email: "example@gmail.com",
-    phone: "01122812165",
+    phone: "1-800-444-4444",
     city: "Cairo",
-    summary: "Place holder short summary",
+    summary:
+      "Computer science student with hands-on experience in front-end and .NET development.",
   },
-  jobs: [],
+  experience: {
+    role: "Software Developer Intern",
+    company: "Google",
+    startDate: "2026-02-07",
+    endDate: "2026-05-07",
+  },
   education: [],
 }
 
@@ -26,11 +33,26 @@ function App() {
       personal: { ...prev.personal, [field]: value },
     }))
   }
+
+  function handleExperienceChange(field, value) {
+    setResume((prev) => {
+      const next = { ...prev.experience, [field]: value }
+      if (next.startDate && next.endDate && next.endDate < next.startDate) {
+        return prev
+      }
+      return { ...prev, experience: next }
+    })
+  }
+
   return (
-    <div>
+    <div id="App">
       <Nav />
       <div id="MainContent">
-        <Form resume={resume} onPersonalChange={handlePersonalChange} />
+        <Form
+          resume={resume}
+          onPersonalChange={handlePersonalChange}
+          onExperienceChange={handleExperienceChange}
+        />
         <Template resume={resume} />
       </div>
     </div>

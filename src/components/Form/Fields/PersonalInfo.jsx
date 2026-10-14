@@ -1,7 +1,9 @@
+import "./PersonalInfo.css"
+
 const personalInfoFields = [
   { id: "fname", label: "First name" },
   { id: "lname", label: "Last name" },
-  { id: "role", label: "Role" },
+  { id: "desiredRole", label: "Job title you're aiming for" },
   { id: "email", label: "Email", type: "email" },
   { id: "phone", label: "Phone", type: "tel" },
   { id: "city", label: "City" },
@@ -21,8 +23,8 @@ function PersonalInfo({ data, onChange }) {
               <textarea
                 id={id}
                 name={id}
-                rows="10"
-                cols="50"
+                rows="4"
+                cols="35"
                 placeholder="Type your short summary here"
                 value={data[id]}
                 onChange={(e) => onChange(id, e.target.value)}

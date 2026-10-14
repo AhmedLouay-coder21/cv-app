@@ -3,8 +3,9 @@ import Button from "../Button/Button"
 import ProgressBar from "./ProgressBar/ProgressBar"
 import PersonalInfo from "./Fields/PersonalInfo"
 import "./Form.css"
+import ExperienceInfo from "./Fields/ExperienceInfo"
 
-function Form({ resume, onPersonalChange }) {
+function Form({ resume, onPersonalChange, onExperienceChange }) {
   const [step, setSteps] = useState(1)
   const totalNumberOfSteps = 4
   function handleIncreaseSteps() {
@@ -20,7 +21,15 @@ function Form({ resume, onPersonalChange }) {
   return (
     <div className="Form">
       <Steps step={step} totalNumberOfSteps={totalNumberOfSteps} />
-      <PersonalInfo data={resume.personal} onChange={onPersonalChange} />
+      {step === 1 && (
+        <PersonalInfo data={resume.personal} onChange={onPersonalChange} />
+      )}
+      {step === 2 && (
+        <ExperienceInfo
+          data={resume.experience}
+          onChange={onExperienceChange}
+        />
+      )}
       <div id="FormButtons">
         <Button name={"Back"} onClick={handleDecreaseSteps} />
         <Button name={"Continue"} onClick={handleIncreaseSteps} />
@@ -32,8 +41,7 @@ function Steps({ step, totalNumberOfSteps }) {
   return (
     <>
       <p>
-        {" "}
-        Steps {step} of {totalNumberOfSteps}{" "}
+        Step {step} of {totalNumberOfSteps}
       </p>
       <ProgressBar step={step} total={totalNumberOfSteps} />
     </>
