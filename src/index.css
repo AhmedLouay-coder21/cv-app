@@ -46,9 +46,10 @@ form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 10px;
 }
 input {
-  width: 50%;
+  width: 350px;
   padding: 8px 14px;
   border: 1px solid #c5cfd8;
   border-radius: 8px;

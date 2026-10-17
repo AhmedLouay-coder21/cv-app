@@ -5,6 +5,7 @@ function Template({ resume }) {
   const { fname, lname, desiredRole, email, phone, city, summary } =
     resume.personal
   const { role, company, startDate, endDate } = resume.experience
+  const { degree, school } = resume.education
   return (
     <div id="Template">
       <div id="TemplateContent">
@@ -34,6 +35,8 @@ function Template({ resume }) {
           </div>
           <div className="sub-section">
             <h4>EDUCATION</h4>
+            <h2>{degree}</h2>
+            <p>{school}</p>
           </div>
         </div>
       </div>

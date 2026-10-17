@@ -21,7 +21,10 @@ const resumeInfo = {
     startDate: "2026-02-07",
     endDate: "2026-05-07",
   },
-  education: [],
+  education: {
+    degree: "B.Sc. Computer Science",
+    school: "University Name",
+  },
 }
 
 function App() {
@@ -43,6 +46,12 @@ function App() {
       return { ...prev, experience: next }
     })
   }
+  function handleEducationChange(field, value) {
+    setResume((prev) => ({
+      ...prev,
+      education: { ...prev.education, [field]: value },
+    }))
+  }
 
   return (
     <div id="App">
@@ -52,6 +61,7 @@ function App() {
           resume={resume}
           onPersonalChange={handlePersonalChange}
           onExperienceChange={handleExperienceChange}
+          onEducationChange={handleEducationChange}
         />
         <Template resume={resume} />
       </div>

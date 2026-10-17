@@ -4,8 +4,14 @@ import ProgressBar from "./ProgressBar/ProgressBar"
 import PersonalInfo from "./Fields/PersonalInfo"
 import "./Form.css"
 import ExperienceInfo from "./Fields/ExperienceInfo"
+import EducationInfo from "./Fields/EducationInfo"
 
-function Form({ resume, onPersonalChange, onExperienceChange }) {
+function Form({
+  resume,
+  onPersonalChange,
+  onExperienceChange,
+  onEducationChange,
+}) {
   const [step, setSteps] = useState(1)
   const totalNumberOfSteps = 4
   function handleIncreaseSteps() {
@@ -29,6 +35,9 @@ function Form({ resume, onPersonalChange, onExperienceChange }) {
           data={resume.experience}
           onChange={onExperienceChange}
         />
+      )}
+      {step === 3 && (
+        <EducationInfo data={resume.education} onChange={onEducationChange} />
       )}
       <div id="FormButtons">
         <Button name={"Back"} onClick={handleDecreaseSteps} />
