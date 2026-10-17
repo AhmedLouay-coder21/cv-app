@@ -5,12 +5,14 @@ import PersonalInfo from "./Fields/PersonalInfo"
 import "./Form.css"
 import ExperienceInfo from "./Fields/ExperienceInfo"
 import EducationInfo from "./Fields/EducationInfo"
+import SkillsAndStylesInfo from "./Fields/SkillsAndStylesInfo"
 
 function Form({
   resume,
   onPersonalChange,
   onExperienceChange,
   onEducationChange,
+  onSkillsChange,
 }) {
   const [step, setSteps] = useState(1)
   const totalNumberOfSteps = 4
@@ -38,6 +40,12 @@ function Form({
       )}
       {step === 3 && (
         <EducationInfo data={resume.education} onChange={onEducationChange} />
+      )}
+      {step === 4 && (
+        <SkillsAndStylesInfo
+          data={resume.skillsAndStyle}
+          onChange={onSkillsChange}
+        />
       )}
       <div id="FormButtons">
         <Button name={"Back"} onClick={handleDecreaseSteps} />

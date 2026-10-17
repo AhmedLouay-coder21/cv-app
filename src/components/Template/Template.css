@@ -5,7 +5,29 @@
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  height: 80%;
+  min-height: 80%;
+}
+#Template hr {
+  border: 0;
+  border-top: 2px solid var(--accent);
+}
+#Template h4 {
+  color: var(--accent);
+  letter-spacing: 0.08em;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.skill {
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font:
+    500 12px "DM Sans",
+    sans-serif;
 }
 #TemplateContent {
   display: flex;

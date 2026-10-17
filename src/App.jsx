@@ -25,6 +25,10 @@ const resumeInfo = {
     degree: "B.Sc. Computer Science",
     school: "University Name",
   },
+  skillsAndStyle: {
+    skills: "C#,.NET,Angular,SQL,Git",
+    color: "#0f6e66",
+  },
 }
 
 function App() {
@@ -52,6 +56,12 @@ function App() {
       education: { ...prev.education, [field]: value },
     }))
   }
+  function handleSkillsChange(field, value) {
+    setResume((prev) => ({
+      ...prev,
+      skillsAndStyle: { ...prev.skillsAndStyle, [field]: value },
+    }))
+  }
 
   return (
     <div id="App">
@@ -62,6 +72,7 @@ function App() {
           onPersonalChange={handlePersonalChange}
           onExperienceChange={handleExperienceChange}
           onEducationChange={handleEducationChange}
+          onSkillsChange={handleSkillsChange}
         />
         <Template resume={resume} />
       </div>

@@ -6,8 +6,9 @@ function Template({ resume }) {
     resume.personal
   const { role, company, startDate, endDate } = resume.experience
   const { degree, school } = resume.education
+  const { skills, color } = resume.skillsAndStyle
   return (
-    <div id="Template">
+    <div id="Template" style={{ "--accent": color }}>
       <div id="TemplateContent">
         <div id="fullName">
           <h1>{fname}</h1>
@@ -37,6 +38,20 @@ function Template({ resume }) {
             <h4>EDUCATION</h4>
             <h2>{degree}</h2>
             <p>{school}</p>
+          </div>
+          <div className="sub-section">
+            <h4>SKILLS</h4>
+            <div className="skills">
+              {skills
+                .split(",")
+                .map((s) => s.trim())
+                .filter(Boolean)
+                .map((skill, i) => (
+                  <div className="skill" key={`${skill}-${i}`}>
+                    {skill}
+                  </div>
+                ))}
+            </div>
           </div>
         </div>
       </div>
