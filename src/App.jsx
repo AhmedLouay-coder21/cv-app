@@ -3,6 +3,7 @@ import Form from "./components/Form/Form"
 import Template from "./components/Template/Template"
 import { useState } from "react"
 import "./styles/App.css"
+import { downloadPdf } from "./components/Form/Pdf/PdfDownload"
 
 const resumeInfo = {
   personal: {
@@ -65,7 +66,7 @@ function App() {
 
   return (
     <div id="App">
-      <Nav />
+      <Nav onDownload={() => downloadPdf(resume)} />
       <div id="MainContent">
         <Form
           resume={resume}

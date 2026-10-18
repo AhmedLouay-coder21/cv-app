@@ -1,4 +1,4 @@
-function Button({ name, onClick = "" }) {
+function Button({ name = "", onClick }) {
   return (
     <button type="button" onClick={onClick}>
       {name}

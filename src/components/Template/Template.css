@@ -5,7 +5,8 @@
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  min-height: 80%;
+  min-height: 50%;
+  max-height: 80%;
 }
 #Template hr {
   border: 0;
@@ -39,6 +40,12 @@
   display: flex;
   gap: 10px;
 }
+#lastName {
+  color: var(--accent);
+}
+#desiredRole {
+  color: var(--accent);
+}
 #additionalContent {
   display: flex;
   gap: 10px;
@@ -63,4 +70,7 @@
   display: flex;
   flex-direction: column;
   gap: 5px;
+}
+.sub-section h2 {
+  margin-top: 5px;
 }

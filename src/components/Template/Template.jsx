@@ -11,10 +11,16 @@ function Template({ resume }) {
     <div id="Template" style={{ "--accent": color }}>
       <div id="TemplateContent">
         <div id="fullName">
-          <h1>{fname}</h1>
-          <h1>{lname}</h1>
+          <div id="firstName">
+            <h1>{fname}</h1>
+          </div>
+          <div id="lastName">
+            <h1>{lname}</h1>
+          </div>
         </div>
-        <h3>{desiredRole}</h3>
+        <div id="desiredRole">
+          <h3>{desiredRole}</h3>
+        </div>
         <div id="additionalContent">
           <p>{email}</p>
           <p>{phone}</p>

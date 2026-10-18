@@ -1,7 +1,7 @@
 import "./Nav.css"
 import Button from "../Button/Button"
 
-function Nav() {
+function Nav({ onDownload }) {
   return (
     <header>
       <div className="container">
@@ -12,7 +12,7 @@ function Nav() {
               <Button name={"Save draft"} />
             </li>
             <li>
-              <Button name={"Download PDF"} />
+              <Button name={"Download PDF"} onClick={onDownload} />
             </li>
           </ul>
         </nav>

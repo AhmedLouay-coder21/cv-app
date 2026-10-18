@@ -6,6 +6,7 @@ import "./Form.css"
 import ExperienceInfo from "./Fields/ExperienceInfo"
 import EducationInfo from "./Fields/EducationInfo"
 import SkillsAndStylesInfo from "./Fields/SkillsAndStylesInfo"
+import { downloadPdf } from "./Pdf/PdfDownload"
 
 function Form({
   resume,
@@ -17,6 +18,9 @@ function Form({
   const [step, setSteps] = useState(1)
   const totalNumberOfSteps = 4
   function handleIncreaseSteps() {
+    if (step + 1 > 4) {
+      downloadPdf(resume)
+    }
     if (step + 1 <= 4) {
       setSteps(step + 1)
     }
