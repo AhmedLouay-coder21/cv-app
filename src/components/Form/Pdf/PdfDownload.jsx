@@ -1,5 +1,5 @@
 import { pdf } from "@react-pdf/renderer"
-import { MyCV } from "./PDFBuilder"
+import { MyCV } from "./PdfBuilder"
 
 export async function downloadPdf(resume) {
   const blob = await pdf(<MyCV resume={resume} />).toBlob()
