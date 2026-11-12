@@ -8,38 +8,33 @@ body {
   height: 100%;
 }
 #root {
-  height: 100%;
+  min-height: 100%;
 }
 body {
   font-family: Arial, sans-serif;
+  background: #f5f7f9;
+  color: #14202b;
 }
 
 .container {
+  width: min(100% - 32px, 1200px);
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 button {
   padding: 7px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
 }
 
-@media (max-width: 600px) {
-  button {
-    font-size: 12px;
-  }
-}
 #MainContent {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 2%;
-  height: 100%;
-}
-@media (max-width: 600px) {
-  #MainContent {
-    margin: 2%;
-  }
+  width: min(100% - 32px, 1200px);
+  display: grid;
+  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
+  align-items: start;
+  gap: clamp(24px, 5vw, 72px);
+  margin: 24px auto 40px;
 }
 
 form {
@@ -48,26 +43,50 @@ form {
   gap: 10px;
   margin-top: 10px;
 }
-input {
-  width: 350px;
+
+input,
+textarea {
+  width: 100%;
+  max-width: 100%;
   padding: 8px 14px;
   border: 1px solid #c5cfd8;
   border-radius: 8px;
   background: #fff;
   color: #14202b;
+  font: inherit;
 }
 
-input:focus {
+textarea {
+  resize: vertical;
+}
+
+input:focus,
+textarea:focus {
   outline: 2px solid #0f6e66;
   border-color: #0f6e66;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 800px) {
   #MainContent {
-    flex-direction: column;
-    gap: 20px;
-    height: auto;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-top: 20px;
   }
-  input {
-    width: 100%;
+}
+
+@media (max-width: 480px) {
+  .container,
+  #MainContent {
+    width: min(100% - 24px, 1200px);
+  }
+
+  #MainContent {
+    gap: 24px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
+
+  button {
+    font-size: 0.8rem;
   }
 }

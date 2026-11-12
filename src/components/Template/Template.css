@@ -1,12 +1,13 @@
 #Template {
-  width: 45%;
+  width: 100%;
+  min-width: 0;
   overflow: hidden;
   overflow-wrap: anywhere;
   box-shadow:
     0 4px 8px 0 rgba(0, 0, 0, 0.2),
     0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  min-height: 50%;
-  max-height: 80%;
+  min-height: 520px;
+  background: #fff;
 }
 #Template hr {
   border: 0;
@@ -39,6 +40,7 @@
 #fullName {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 #lastName {
   color: var(--accent);
@@ -48,17 +50,25 @@
 }
 #additionalContent {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
 }
-@media (max-width: 600px) {
+
+@media (max-width: 480px) {
   #Template {
-    width: 100%;
-    height: auto;
-    overflow-x: auto;
-    margin: 2%;
+    min-height: 0;
   }
+
   #TemplateContent {
-    min-height: 500px;
+    margin: 8%;
+  }
+
+  #fullName h1 {
+    font-size: 1.8rem;
+  }
+
+  #desiredRole h3 {
+    font-size: 1rem;
   }
 }
 .sections {

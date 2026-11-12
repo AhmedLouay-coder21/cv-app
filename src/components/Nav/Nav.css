@@ -1,14 +1,14 @@
 header {
   background-color: #333;
   color: #fff;
-  padding: 15px 0;
+  padding: 12px 0;
 }
 
 header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
 }
 
 #logo {
@@ -20,7 +20,9 @@ header .container {
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  align-items: center;
+  list-style: none;
 }
 .nav-links li {
   display: inline-block;
@@ -38,10 +40,22 @@ header .container {
   background-color: #555;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 480px) {
+  header .container {
+    align-items: flex-start;
+  }
+
+  #logo {
+    font-size: 1.25rem;
+  }
+
   .nav-links {
-    display: flex;
-    flex-direction: row;
-    gap: 5px;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links button {
+    padding: 7px 6px;
   }
 }
